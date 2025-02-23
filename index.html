@@ -16,7 +16,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
-
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <!-- 
     - google font link
   -->
@@ -670,21 +670,15 @@
 
           </div>
 
-          <form action="" class="contact-form">
-
-            <input type="text" name="name" aria-label="name" placeholder="Name" required class="input-field">
-
-            <input type="email" name="email_address" aria-label="email" placeholder="Email" required
-              class="input-field">
-
-            <textarea name="message" aria-label="message" placeholder="Message" required class="input-field"></textarea>
-
+          <form id="contact-form" class="contact-form">
+            <input type="text" id="name" name="name" aria-label="name" placeholder="Name" required class="input-field">
+            <input type="email" id="email_address" name="email_address" aria-label="email" placeholder="Email" required class="input-field">
+            <textarea id="message" name="message" aria-label="message" placeholder="Message" required class="input-field"></textarea>
+          
             <button type="submit" class="submit-btn">
               <span class="span">Submit</span>
-
               <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
             </button>
-
           </form>
 
         </div>
@@ -745,14 +739,10 @@
     </div>
   </footer>
 
-
-
-
-
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/script.js" ></script>
 
   <!-- 
     - ionicon link
