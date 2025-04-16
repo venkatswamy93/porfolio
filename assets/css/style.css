@@ -22,7 +22,7 @@
 
   --sonic-silver: hsl(0, 0%, 46%);
   --spanish-gray: hsl(0, 0%, 60%);
-  --theme-color: hsl(10, 100%, 57%);
+  --theme-color: hsl(31 75.6% 46.7%);
   --light-gray: hsl(0, 0%, 80%);
   --gray-x-11: hsl(0, 0%, 73%);
   --dim-gray: hsl(0, 0%, 44%);
@@ -294,16 +294,38 @@ body::-webkit-scrollbar-thumb {
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent; /* we’ll handle background with ::before */
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.4); /* change to your desired color and opacity */
+  z-index: -1;
+  backdrop-filter: blur(6px); /* optional: nice blur effect */
+}
 
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--white);
-  padding-block: 15px;
-  border-block-end: 1px solid var(--black_10);
-  z-index: 4;
+  padding: 15px 0;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  backdrop-filter: blur(10px); /* optional modern glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
 .header > .container {
@@ -313,13 +335,11 @@ body::-webkit-scrollbar-thumb {
   gap: 50px;
 }
 
-.logo {
-  color: var(--black);
-  font-family: var(--ff-poppins);
-  font-size: 3.2rem;
-  line-height: 0.9;
-  font-weight: var(--fw-700);
+.logo img {
+  height: 50px;
+  width: auto;
 }
+
 
 .nav-toggle-btn .line {
   width: 30px;
