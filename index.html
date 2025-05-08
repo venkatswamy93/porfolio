@@ -1,869 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="./assets/images/titleicon.png">
-  <title>MN Design Solutions</title>
-
-  <!-- 
-    - favicon
-  -->
-  <!-- <link rel="shortcut icon" href="./favicon.svg" type=""> -->
-
-  <!-- git
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Poppins:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  <!-- 
-    - preload images
-  -->
-  <!-- <link rel="preload" as="image" href="./assets/images/Profile.jpg"> -->
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MN Design Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f5f3ef;
+            font-family: Arial, sans-serif;
+        }
+        .custom-navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand span {
+            margin-left: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        .nav-link {
+            color: #333;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: #666;
+        }
+        .carousel-item img {
+            max-height: 500px;
+            object-fit: cover;
+        }
+        .custom-caption {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+        }
+        .custom-caption h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .custom-caption p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        .custom-caption .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .custom-caption .btn:hover {
+            background-color: #555;
+        }
+        .middlebody {
+            padding: 50px 0;
+        }
+        .services-section {
+            padding: 50px 0;
+            background-color: #f5f3ef;
+        }
+        .services-section .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .services-section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .services-section h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4a373;
+            margin-bottom: 20px;
+        }
+        .services-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .services-section ul li {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .services-section ul li::before {
+            content: "•";
+            color: #d4a373;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        .services-section .contact-info {
+            margin-top: 20px;
+        }
+        .services-section .contact-info p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .services-section .contact-info a {
+            color: #333;
+            text-decoration: none;
+        }
+        .services-section .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .card {
+            border: none;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .card-text {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .learn-more {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .learn-more:hover {
+            text-decoration: underline;
+        }
+        .elevate-section {
+            padding: 50px 0;
+            background-color: #f5f3ef;
+        }
+        .elevate-section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .elevate-section p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        .elevate-section .btn-start {
+            background-color: #d4a373;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .elevate-section .btn-start:hover {
+            background-color: #c1905e;
+        }
+        .elevate-section .btn-discover {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .elevate-section .btn-discover:hover {
+            text-decoration: underline;
+        }
+        .elevate-section .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .elevate-section .small-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .testimonial {
+            margin-top: 30px;
+        }
+        .testimonial h5 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .testimonial p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .get-in-touch {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #f5f3ef;
+        }
+        .get-in-touch h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .get-in-touch p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 30px;
+        }
+        .contact-item h5 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .contact-item p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
+        }
+        footer .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        footer .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+        footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        footer .social-icons a:hover {
+            color: #ccc;
+        }
+    </style>
 </head>
-
 <body>
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="#" class="logo">
-        
-        <img src="./assets/images/logo_png.png"  alt="Venkat Jampana" >
-        
-      </a>
-
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link" data-nav-link>Home</a>
-          </li>
-
-          <li>
-            <a href="#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
-          </li>
-
-          <li>
-            <a href="#skills" class="navbar-link" data-nav-link>Skills</a>
-          </li>
-
-          <li>
-            <a href="#timeline" class="navbar-link" data-nav-link>Timeline</a>
-          </li>
-
-          <li>
-            <a href="#price" class="navbar-link" data-nav-link>Price</a>
-          </li>
-
-          <li>
-            <a href="#news" class="navbar-link" data-nav-link>News</a>
-          </li>
-
-          <li>
-            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
-          </li>
-
-        </ul>
-      </nav>
-
-      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
-        <span class="line line-1"></span>
-        <span class="line line-2"></span>
-        <span class="line line-3"></span>
-      </button>
-
-    </div>
-  </header>
-
-
-
-
-
-  <main>
-    <article>
-
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="section hero" id="home" aria-label="hero">
-        <div class="container">
-
-          <figure class="hero-banner img-holder has-before" style="--width: 740; --height: 840;">
-            <img src="./assets/images/logo.jpeg" width="640" height="840" alt="Venkat Jampana" class="img-cover">
-          </figure>
-
-          <div class="hero-content">
-
-            <p class="section-subtitle"> Venkat Jampana</p>
-
-            <h1 class="h1 hero-title">Creative Interior Designer</h1>
-
-            <ul class="hero-list">
-
-              <li>
-                <a href="#" class="list-link">
-                  <span class="span">Commercial Interiors</span>
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="list-link">
-                  <span class="span">Residential Interiors</span>
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="list-link">
-                  <span class="span">Elevations</span>
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-              </li>
-
-            </ul>
-
-            <ul class="exp-list">
-
-              <li class="list-item">
-                <strong class="strong">3+</strong>
-
-                <span class="span">
-                  Years of<br>
-                  Experience
-                </span>
-              </li>
-
-              <li class="list-item">
-                <strong class="strong">40+</strong>
-
-                <span class="span">
-                  Happy<br>
-                  Customers
-                </span>
-              </li>
-
-            </ul>
-
-            <a href="#portfolio" class="slide-down-btn" aria-label="scroll down">
-              <ion-icon name="arrow-down" aria-hidden="true"></ion-icon>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/MNDS.webp" alt="Logo" style="height: 40px; width: auto;">
+                <span>ModishNest Design Solutions</span>
             </a>
-
-          </div>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #Works
-
-      -->
-
-      <section class="section portfolio" id="portfolio" aria-label="portfolio">
-        <div class="container">
-
-          <p class="section-subtitle">Portfolio</p>
-
-          <h2 class="h2 section-title">Selected Works</h2>
-
-          <ul class="has-scrollbar">
-
-            <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/Floorplan 2.jpg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">Floor Plans</h3>
-
-                  <p class="card-text">3D Floor Plans</p>
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/Moadboard 1.jpg" width="600" height="675" loading="lazy" alt="Bona Green"
-                    class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">Moad Board</h3>
-
-                  <p class="card-text">Creating Moadboard Design</p>
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/Color palate 1.jpg" width="600" height="675" loading="lazy" alt="Leo Dandora"
-                    class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">Color Palate</h3>
-
-                  <p class="card-text">Color Theme </p>
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/Floorplan.jpg" width="600" height="675" loading="lazy" alt="Folio Grasia"
-                    class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">Interior Furniture Layouts</h3>
-
-                  <p class="card-text">Detail</p>
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/Moadboard 2.jpg" width="600" height="675" loading="lazy" alt="Viva Mercury"
-                    class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">Furniture Selections</h3>
-
-                  <p class="card-text">Image</p>
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="../Venkat Porfolio/readme-images/Living 1.jpg" width="600" height="675" loading="lazy" alt="Santa Onera"
-                    class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">Living Area</h3>
-
-                  <p class="card-text">TV Unit</p>
-
-                </a>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
- <!-- 
-        - #PORTFOLIO
-      -->
-
-      <section class="section portfolio" id="portfolio" aria-label="portfolio">
-        <div class="container">
-
-          <p class="section-subtitle">My Works</p>
-
-          <!-- <h2 class="h2 section-title">Selected Works</h2> -->
-
-          <ul class="has-scrollbar">
-
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/Corckery1.jpeg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/Crockery.jpeg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-              </div>
-            </li>
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/GBR.jpeg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-              </div>
-            </li>
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/KBR.jpeg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-              </div>
-            </li>
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/Mkitchen.jpeg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-              </div>
-            </li>
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/Pooja.jpeg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-              </div>
-            </li>
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/MBR1.jpeg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/P2_1 - Photo.jpg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/P2_2 - Photo.jpg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/P2_3 - Photo.jpg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/P2_4- Photo.jpg" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-              </div>
-            </li>
-
-
-          </ul>
-
-        </div>
-      </section>
-      <!-- 
-        - #SKILLS
-      -->
-
-      <section class="section skills has-before" id="skills" aria-label="skills"
-        style="background-image: url('./assets/images/skills-bg.png')">
-        <div class="container">
-
-          <div class="skills-content">
-
-            <p class="section-subtitle">Skills</p>
-
-            <h2 class="h2 section-title">Technical Skills</h2>
-
-            <p class="section-text">
-              For more than 5 years our experts have been accomplishing enough with modern Interior Designing, new
-              generation Interiors.
-            </p>
-
-            <ul class="skills-list">
-
-              <li class="skills-item">
-                <div class="wrapper">
-                  <h3 class="skill-title">SketchUp</h3>
-
-                  <data class="skill-value" value="95%">95%</data>
-                </div>
-
-                <div class="progress-box">
-                  <div class="progress" style="width: 95%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="wrapper">
-                  <h3 class="skill-title">V ray-5</h3>
-
-                  <data class="skill-value" value="80%">80%</data>
-                </div>
-
-                <div class="progress-box">
-                  <div class="progress" style="width: 80%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="wrapper">
-                  <h3 class="skill-title">AutoCad</h3>
-
-                  <data class="skill-value" value="90%">90%</data>
-                </div>
-
-                <div class="progress-box">
-                  <div class="progress" style="width: 90%"></div>
-                </div>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <div class="skills-banner has-before"></div>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #TIMELINE
-      -->
-
-      <section class="section timeline" id="timeline" aria-label="timeline">
-        <div class="container">
-
-          <p class="section-subtitle">Timeline</p>
-
-          <h2 class="h2 section-title">Working Period</h2>
-
-          <ul class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h3 class="item-period">Aug, 2023 - Today</h3>
-
-              <p class="item-title">Interior Designer</p>
-
-              <p class="item-address">Decorpot, Hyderabad</p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h3 class="item-period">March, 2021 - Aug, 2023</h3>
-
-              <p class="item-title">Interior Designer</p>
-
-              <p class="item-address">Hyderabad Urban Interiors, Hyderabad</p>
-
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #PRICING
-      -->
-
-      <section class="section pricing" id="price" aria-label="price">
-        <div class="container">
-
-          <div class="pricing-content">
-
-            <p class="section-subtitle">Pricing</p>
-
-            <h2 class="h2 section-title">Service Prices</h2>
-
-            <p class="section-text">
-              For more than 5 years our experts have been accomplishing enough with modern Interior Designing, new
-              generation Interiors.
-            </p>
-
-          </div>
-
-          <ul class="pricing-list">
-
-            <li>
-              <div class="pricing-card">
-                <ion-icon name="Pencil-outline" aria-hidden="true"></ion-icon>
-
-                <h3 class="card-title">Floor Plans</h3>
-
-                <data class="card-price" value="500">1 - 2 INR per SFT</data>
-              </div>
-            </li>
-
-            <li>
-              <div class="pricing-card">
-                <ion-icon name="home-outline" aria-hidden="true"></ion-icon>
-
-                <h3 class="card-title">Interior Designs</h3>
-
-                <data class="card-price" value="400">30 - 50 INR per SFT</data>
-              </div>
-            </li>
-
-            <li>
-              <div class="pricing-card">
-                <ion-icon name="home-outline" aria-hidden="true"></ion-icon>
-
-                <h3 class="card-title">Exterior Elevation</h3>
-
-                <data class="card-price" value="300">6000INR per Floor</data>
-              </div>
-            </li>
-
-            <li>
-              <div class="pricing-card">
-                <ion-icon name="print-outline" aria-hidden="true"></ion-icon>
-
-                <h3 class="card-title">Quotation For Interiors</h3>
-
-                <data class="card-price" value="200">1 - 3 INR per SFT</data>
-              </div>
-            </li>
-
-            <li>
-              <div class="pricing-card">
-                <ion-icon name="home-outline" aria-hidden="true"></ion-icon>
-
-                <h3 class="card-title">Interior End to End Service</h3>
-
-                <data class="card-price" value="100">Contact for more Info</data>
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #NEWS
-      -->
-
-      <!-- <section class="section news" id="news" aria-label="news">
-        <div class="container">
-
-          <p class="section-subtitle">News</p>
-
-          <h2 class="h2 section-title">Latest News</h2>
-
-          <ul class="has-scrollbar">
-
-            <li class="scrollbar-item">
-              <div class="card news-card">
-
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/blog-1.jpg" width="600" height="675" loading="lazy"
-                    alt="VS Code Gets New JavaScript Debugger" class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <time class="card-text" datetime="2022-09-02">September 02, 2022</time>
-
-                  <h3 class="h3 card-title">VS Code Gets New JavaScript Debugger</h3>
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card news-card">
-
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/blog-2.jpg" width="600" height="675" loading="lazy"
-                    alt="Javalin Framework for Kotlin and Java Updated" class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <time class="card-text" datetime="2022-08-17">August 17, 2022</time>
-
-                  <h3 class="h3 card-title">Javalin Framework for Kotlin and Java Updated</h3>
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card news-card">
-
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/blog-3.jpg" width="600" height="675" loading="lazy"
-                    alt="JavaScript Dominated Open Source in 2022" class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <time class="card-text" datetime="2022-07-05">July 05, 2022</time>
-
-                  <h3 class="h3 card-title">JavaScript Dominated Open Source in 2022</h3>
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card news-card">
-
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/blog-4.jpg" width="600" height="675" loading="lazy"
-                    alt="Perfecto Tests Progressive Web Apps" class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <time class="card-text" datetime="2022-04-22">April 22, 2022</time>
-
-                  <h3 class="h3 card-title">Perfecto Tests Progressive Web Apps</h3>
-
-                </a>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section> -->
-
-
-
-
-
-      <!-- 
-        - #CONTACT
-      -->
-
-      <section class="section contact" id="contact" aria-label="contact">
-        <div class="container">
-
-          <div class="contact-content">
-
-            <p class="section-subtitle">Contact</p>
-
-            <h2 class="h2 section-title">Get In Touch</h2>
-
-            <p class="section-text">
-              Please fill out the form on this section to contact with me. Or call between 9:00 a.m. and 8:00 p.m. ISD,
-              Monday through
-              Friday
-            </p>
-
-            <ul class="contact-list">
-
-              <li class="contact-item">
-                <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
-
-                <address class="contact-link">
-                  Hyderabad, India
-                </address>
-              </li>
-
-              <li class="contact-item">
-                <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
-
-                <a href="tel: +91" class="contact-link">+91 8367028936</a>
-              </li>
-
-              <li class="contact-item">
-                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
-
-                <a href="mailto:VENKATSWAMYJ@GMAIL.COM" class="contact-link">mndesignsolutions@gmail.com</a>
-              </li>
-
-              <li class="contact-item">
-                <ion-icon name="globe-outline" aria-hidden="true"></ion-icon>
-
-                <a href="" class="contact-link">www.vj.com</a>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <form id="contact-form" class="contact-form">
-            <input type="text" id="name" name="name" aria-label="name" placeholder="Name" required class="input-field">
-            <input type="email" id="email_address" name="email_address" aria-label="email" placeholder="Email" required class="input-field">
-            <textarea id="message" name="message" aria-label="message" placeholder="Message" required class="input-field"></textarea>
-          
-            <button type="submit" class="submit-btn">
-              <span class="span">Submit</span>
-              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-          </form>
-
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </section>
+    </nav>
 
-    </article>
-  </main>
-
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer class="footer">
-    <div class="container">
-
-      <p class="copyright">
-        &copy; 2022. All rights reserved by <a href="#" class="copyright-link">VJ.</a>
-      </p>
-
-      <ul class="social-list">
-
-        <li>
-          <a href="https://www.facebook.com/profile.php?id=61567080546838" class="social-link">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.instagram.com/venkat.jampana/" class="social-link">
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-dribbble"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-tiktok"></ion-icon>
-          </a>
-        </li>
-
-      </ul>
-
+    <!-- Carousel -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./assets/cover_3.png" class="d-block w-100" alt="Carousel Image">
+                <div class="carousel-caption custom-caption d-none d-md-block">
+                    <h1>Welcome to your<br> dream space transformation</h1>
+                    <p>Join us on a journey from vision to reality, where every detail of your interior is crafted with care.</p>
+                    <a href="#" class="btn">Start now</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </footer>
 
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js" ></script>
+    <!-- Main Content -->
+    <div class="container services-section">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="./assets//image.jpg" alt="Living Room" class="main-image">
+            </div>
+            <div class="col-md-6">
+                <h2>ModishNest Design Solutions</h2>
+                <h3>Services Offered</h3>
+                <ul>
+                    <li>Space Planning</li>
+                    <li>Concept Development</li>
+                    <li>Material & Finishes Selection</li>
+                    <li>False Ceiling & Lighting Design</li>
+                    <li>Furniture Selection & Consultation</li>
+                    <li>3D Rendering & Visualization</li>
+                    <li>Budget Management</li>
+                </ul>
+                <div class="contact-info">
+                    <p><a href="tel:+918367028936">8367028936</a></p>
+                    <p><a href="mailto:modishnestds@gmail.com">modishnestds@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Feature Cards -->
+    <div class="container middlebody">
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Material Selection</h5>
+                    <p class="card-text">Choose from a curated selection of materials to enhance your space.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Mood Boards</h5>
+                    <p class="card-text">We create personalized mood boards to capture your style and preferences.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Lighting Solutions</h5>
+                    <p class="card-text">Find lighting options that illuminate and elevate your interior.</p>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Elevate Section -->
+    <section class="elevate-section">
+        <div class="container">
+            <h2>Effortlessly elevate your living space</h2>
+            <p class="mt-3">
+                Our design journey begins with understanding your unique vision. From site measurements to the final
+                design documents, we ensure every step is tailored to your needs. Experience the joy of a personalized
+                space with our expert guidance in mood boards, material selection, and more.
+            </p>
+            <div class="mt-4">
+                <a href="#" class="btn-start">Start Now</a>
+                <a href="#" class="btn-discover">Discover More</a>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <img src="./assets/image (1).jpg" alt="Living Space" class="main-image">
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <img src="./assets/image (2).jpg" alt="Design Process" class="small-image">
+                </div>
+                <div class="col-md-6 testimonial">
+                    <h5>VENKAT JARIPANA</h5>
+                    <p>Interior Design Visionary</p>
+                    <p>“Collaborating with this team was a delightful journey. They understood my aspirations and crafted a space that truly reflects my personality.”</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get in Touch Section -->
+    <section class="get-in-touch">
+        <div class="container">
+            <h2>We’re Here to Listen</h2>
+            <p>Our friendly team is eager to assist with your design needs.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h5>Send Us an Email</h5>
+                    <p>Reach out for personalized design support.</p>
+                    <a href="mailto:hello@modishnest.com">hello@modishnest.com</a>
+                </div>
+                <div class="contact-item">
+                    <h5>Give Us a Call</h5>
+                    <p>Chat with us Monday to Friday, 8am – 5pm.</p>
+                    <a href="tel:+918367028936">+91 83670-28936</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="footer-logo">MODISHNEST DESIGN SOLUTIONS</div>
+                </div>
+                <div class="col-md-4 footer-links text-center">
+                    <a href="#">Our Story</a>
+                    <a href="#">What We Do</a>
+                    <a href="#">Our Work</a>
+                    <a href="#">Insights</a>
+                    <a href="#">Get in Touch</a>
+                    <a href="#">Help</a>
+                    <a href="#">Community</a>
+                </div>
+                <div class="col-md-4 social-icons text-end">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <!-- Font Awesome for Social Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
